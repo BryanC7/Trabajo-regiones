@@ -16,61 +16,73 @@ const objetoRegiones = [
     { nombre: 'Aysén', atractivo: 'Laguna San Rafael y Queulat', img: 'img/aysen.jpg', id: 15 },
     { nombre: 'Magallanes', atractivo: 'Torres del Paine y la Antártica', img: 'img/magallanes.jpg', id: 16 }
 ]
-function mostrarRegion(region) {
-    switch (region) {
+function mostrarRegion(id) {
+    switch (id) {
         case 1:
-            crearCard()
+            crearCard(id)
             break
         case 2:
-            crearCard()
+            crearCard(id)
             break
         case 3:
-            crearCard()
+            crearCard(id)
             break
         case 4:
-            crearCard()
+            crearCard(id)
             break
         case 5:
-            crearCard()
+            crearCard(id)
             break
         case 6:
-            crearCard()
+            crearCard(id)
             break
         case 7:
-            crearCard()
+            crearCard(id)
             break
         case 8:
-            crearCard()
+            crearCard(id)
             break
         case 9:
-            crearCard()
+            crearCard(id)
             break
         case 10:
-            crearCard()
+            crearCard(id)
             break
         case 11:
-            crearCard()
+            crearCard(id)
             break
         case 12:
-            crearCard()
+            crearCard(id)
             break
         case 13:
-            crearCard()
+            crearCard(id)
             break
         case 14:
-            crearCard()
+            crearCard(id)
             break
         case 15:
-            crearCard()
+            crearCard(id)
             break
         case 16:
-            crearCard()
+            crearCard(id)
             break
     }
 }
 
 const div = document.querySelector('#div')
 
-function crearCard() {
-    objetoRegiones.forEach(region => console.log(region))
+function crearCard(id) {
+    objetoRegiones.forEach(region => {
+        if (id === region.id) {
+            const card = document.createElement('div')
+            card.classList.add('card')
+            card.innerHTML =
+                // <img class="card-img-top shadow">
+                // <div class="card-body">
+                //     <h5 class="card-title">Región:</h5>
+                //     <p class="card-text" id="atractivos">Atractivos: </p>
+                // </div>
+            console.log('Son iguales')
+        }
+    })
 }
