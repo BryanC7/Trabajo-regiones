@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M3 - ABP AE1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+    #figuras {
+      list-style: none;
+    }
+    .arriba {
+      transform: scale(1.2);
+    }
+    .abajo {
+      transform: scale(0.8);
+    }
+    .borde{
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <div class="text-center container">
+    <map name="mapa" class="figuras">
+      <area shape="circle" coords="40,100,15" onmouseover="mostrarRegion(1)" />
+      <area shape="circle" coords="90,100,15" onmouseover="mostrarRegion(2)"/>
+      <area shape="rectangle" coords="150,50,230,130" onmouseover="mostrarRegion(3)"/>
+      <area shape="rectangle" coords="270,50,390,150" onmouseover="mostrarRegion(4)"/>
+      <area shape="rectangle" coords="400,100,490,160" onmouseover="mostrarRegion(5)"/>
+      <area shape="circle" coords="510,140,20" onmouseover="mostrarRegion(6)"/>
+      <area shape="circle" coords="550,130,20" onmouseover="mostrarRegion(7)"/>
+      <area shape="circle" coords="580,140,20" onmouseover="mostrarRegion(8)"/>
+      <area shape="circle" coords="620,160,20" onmouseover="mostrarRegion(9)"/>
+      <area shape="circle" coords="660,170,15" onmouseover="mostrarRegion(10)"/>
+      <area shape="circle" coords="695,170,15" onmouseover="mostrarRegion(11)"/>
+      <area shape="circle" coords="750,180,30" onmouseover="mostrarRegion(12)"/>
+      <area shape="circle" coords="800,190,15" onmouseover="mostrarRegion(13)"/>
+      <area shape="rectangle" coords="825,175,925,215" onmouseover="mostrarRegion(14)"/>
+      <area shape="rectangle" coords="950,175,1155,255" onmouseover="mostrarRegion(15)"/>
+      <area shape="rectangle" coords="1180,125,1450,255" onmouseover="mostrarRegion(16)"/>
+    </map>
+    <img src="https://aprotur.cl/wp-content/uploads/2020/07/sur.png" usemap="#mapa">
+  </div>
+
+  <div class="container text-center" id="div"></div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+crossorigin="anonymous"></script>
+<script src="/script.js"></script>
+<script>
+  $("area").hover(function () {
+    $(this).toggleClass('arriba').siblings().toggleClass('abajo')
+  })</script>
+
+</html>
