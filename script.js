@@ -80,10 +80,10 @@ const div = document.querySelector('#div')
 function crearCard(id) {
     const region = objetoRegiones.filter(region => region.id === id)
     const card = document.createElement('div')
-    card.classList.add('card')
+    card.classList.add('card', 'mb-3')
     card.innerHTML = 
     `
-    <img src=${region[0].img} class="card-img-top shadow">
+    <img src=${region[0].img} class="p-2 card-img-top shadow">
     <div class="card-body">
         <h5 class="card-title">Región: ${region[0].nombre}</h5>
         <p class="card-text">Atractivos: ${region[0].atractivos}</p>

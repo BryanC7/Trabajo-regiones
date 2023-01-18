@@ -20,12 +20,6 @@
     .borde{
       border: 1px solid red;
     }
-    img {
-      height: 275px;
-    }
-    body {
-      margin: 0 auto;
-    }
   </style>
 </head>
 
@@ -49,7 +43,7 @@
       <area coords="959,172,1150,259" shape="rect" onmouseover="mostrarInfo(15)" onmouseout="ocultarInfo()"/>
       <area coords="1168,277,1365,254,1485,30,1356,78,1290,181,1190,208" shape="poly" onmouseover="mostrarInfo(16)" onmouseout="ocultarInfo()"/>
     </map>
-    <img src="https://aprotur.cl/wp-content/uploads/2020/07/sur.png"  usemap="#mapa">
+    <img src="https://aprotur.cl/wp-content/uploads/2020/07/sur.png" class="w-100 mb-3" usemap="#mapa">
   </div>
   <div class="container text-center" id="div"></div>
 </body>
@@ -58,8 +52,10 @@
 integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="jquery.rwdImageMaps.js"></script>
 <script src="/script.js"></script>
 <script>
+  $('img[usemap]').rwdImageMaps();
   $("area").hover(function () {
     $(this).toggleClass('arriba').siblings().toggleClass('abajo')
   })
