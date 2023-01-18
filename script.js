@@ -16,68 +16,10 @@ const objetoRegiones = [
     { nombre: 'Aysén', atractivos: 'Laguna San Rafael y Queulat', img: 'img/aysen.jpg', id: 15},
     { nombre: 'Magallanes', atractivos: 'Torres del Paine y la Antártica', img: 'img/magallanes.jpg', id: 16}
 ]
-function mostrarInfo(id) {
-    switch (id) {
-        case 1:
-            crearCard(id)
-            break
-        case 2:
-            crearCard(id)
-            break
-        case 3:
-            crearCard(id)
-            break
-        case 4:
-            crearCard(id)
-            break
-        case 5:
-            crearCard(id)
-            break
-        case 6:
-            crearCard(id)
-            break
-        case 7:
-            crearCard(id)
-            break
-        case 8:
-            crearCard(id)
-            break
-        case 9:
-            crearCard(id)
-            break
-        case 10:
-            crearCard(id)
-            break
-        case 11:
-            crearCard(id)
-            break
-        case 12:
-            crearCard(id)
-            break
-        case 13:
-            crearCard(id)
-            break
-        case 14:
-            crearCard(id)
-            break
-        case 15:
-            crearCard(id)
-            break
-        case 16:
-            crearCard(id)
-            break
-    }
-}
-
-function ocultarInfo() {
-    while(div.firstChild) {
-        div.removeChild(div.firstChild)
-    }
-}
 
 const div = document.querySelector('#div')
 
-function crearCard(id) {
+function mostrarInfo(id) {
     const region = objetoRegiones.filter(region => region.id === id)
     const card = document.createElement('div')
     card.classList.add('card', 'mb-3')
@@ -92,3 +34,8 @@ function crearCard(id) {
     div.appendChild(card)
 }
 
+function ocultarInfo() {
+    while(div.firstChild) {
+        div.removeChild(div.firstChild)
+    }
+}
