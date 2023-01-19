@@ -1,51 +1,65 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>M3 - ABP AE1</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>M3 - ABP AE1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <style>
-    #figuras {
-      list-style: none;
-    }
-    .arriba {
-      transform: scale(1.2);
-    }
-    .abajo {
-      transform: scale(0.8);
-    }
-    .borde{
-      border: 1px solid red;
-    }
-  </style>
 </head>
-
 <body>
-  <div class="text-center container">
-    <map name="mapa" class="figuras">
-      <area coords="44,110,24,87" shape="rect" onmouseover="mostrarInfo(1)" onmouseout="ocultarInfo()"/>
-      <area coords="57,81,119,109" shape="rect" onmouseover="mostrarInfo(2)" onmouseout="ocultarInfo()"/>
-      <area coords="134,65,257,112" shape="rect" onmouseover="mostrarInfo(3)" onmouseout="ocultarInfo()"/>
-      <area coords="281,89,367,130" shape="rect" onmouseover="mostrarInfo(4)" onmouseout="ocultarInfo()"/>
-      <area coords="414,116,476,147" shape="rect" onmouseover="mostrarInfo(5)" onmouseout="ocultarInfo()"/>
-      <area coords="492,122,527,144" shape="rect" onmouseover="mostrarInfo(6)" onmouseout="ocultarInfo()"/>
-      <area coords="536,110,557,144" shape="rect" onmouseover="mostrarInfo(7)" onmouseout="ocultarInfo()"/>
-      <area coords="569,120,588,163" shape="rect" onmouseover="mostrarInfo(8)" onmouseout="ocultarInfo()"/>
-      <area coords="608,130,635,181" shape="rect" onmouseover="mostrarInfo(9)" onmouseout="ocultarInfo()"/>
-      <area coords="649,149,666,190" shape="rect" onmouseover="mostrarInfo(10)" onmouseout="ocultarInfo()"/>
-      <area coords="682,205,703,154" shape="rect" onmouseover="mostrarInfo(11)" onmouseout="ocultarInfo()"/>
-      <area coords="723,156,762,206" shape="rect" onmouseover="mostrarInfo(12)" onmouseout="ocultarInfo()"/>
-      <area coords="782,165,804,208" shape="rect" onmouseover="mostrarInfo(13)" onmouseout="ocultarInfo()"/>
-      <area coords="822,173,926,225" shape="rect" onmouseover="mostrarInfo(14)" onmouseout="ocultarInfo()"/>
-      <area coords="959,172,1150,259" shape="rect" onmouseover="mostrarInfo(15)" onmouseout="ocultarInfo()"/>
-      <area coords="1168,277,1365,254,1485,30,1356,78,1290,181,1190,208" shape="poly" onmouseover="mostrarInfo(16)" onmouseout="ocultarInfo()"/>
-    </map>
-    <img src="https://aprotur.cl/wp-content/uploads/2020/07/sur.png" class="w-100 mb-3" usemap="#mapa">
-  </div>
-  <div class="container text-center" id="div"></div>
+    <div class="text-center container">
+        <map name="mapa" class="figuras">
+            <area coords="44,110,24,87" shape="rect" onclick="mostrarInfo(1)"/>
+            <area coords="57,81,119,109" shape="rect" onclick="mostrarInfo(2)"/>
+            <area coords="134,65,257,112" shape="rect" onclick="mostrarInfo(3)"/>
+            <area coords="281,89,367,130" shape="rect" onclick="mostrarInfo(4)"/>
+            <area coords="414,116,476,147" shape="rect" onclick="mostrarInfo(5)"/>
+            <area coords="492,122,527,144" shape="rect" onclick="mostrarInfo(6)"/>
+            <area coords="536,110,557,144" shape="rect" onclick="mostrarInfo(7)"/>
+            <area coords="569,120,588,163" shape="rect" onclick="mostrarInfo(8)"/>
+            <area coords="608,130,635,181" shape="rect" onclick="mostrarInfo(9)"/>
+            <area coords="649,149,666,190" shape="rect" onclick="mostrarInfo(10)"/>
+            <area coords="682,205,703,154" shape="rect" onclick="mostrarInfo(11)"/>
+            <area coords="723,156,762,206" shape="rect" onclick="mostrarInfo(12)"/>
+            <area coords="782,165,804,208" shape="rect" onclick="mostrarInfo(13)"/>
+            <area coords="822,173,926,225" shape="rect" onclick="mostrarInfo(14)"/>
+            <area coords="959,172,1150,259" shape="rect" onclick="mostrarInfo(15)"/>
+            <area coords="1168,277,1365,254,1485,30,1356,78,1290,181,1190,208" shape="poly" onclick="mostrarInfo(16)"/>
+        </map>
+        <img src="https://aprotur.cl/wp-content/uploads/2020/07/sur.png" class="w-100 mb-3" usemap="#mapa">
+    </div>
+    <div class="container text-center" id="div"></div>
+
+    <!-- Editar información -->
+    <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar información</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex flex-column">
+                        <div class="d-flex flex-column mb-2">
+                            <label for="nombre">Nombre de la región:</label>
+                            <input id="region" type="text">
+                        </div>
+                        <div class="d-flex flex-column mb-2">
+                            <label for="atractivos">Atractivos:</label>
+                            <input id="atractivo" type="text">
+                        </div>
+                        <div class="d-flex flex-column mb-2">
+                            <label for="imagen">Imágen:</label>
+                            <input id="img" type="text">
+                        </div>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="guardarCambios()">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -56,9 +70,6 @@ crossorigin="anonymous"></script>
 <script src="/script.js"></script>
 <script>
   $('img[usemap]').rwdImageMaps();
-  $("area").hover(function () {
-    $(this).toggleClass('arriba').siblings().toggleClass('abajo')
-  })
 </script>
 
 </html>
